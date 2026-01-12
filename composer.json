@@ -9,8 +9,12 @@
             "email": "email@example.com"
         }
     ],
+    "require": {
+        "ext-json": "*"
+    },
     "require-dev": {
-        "pestphp/pest": "^4.3"
+        "pestphp/pest": "^4.3",
+        "laravel/pint": "^1.27"
     },
     "config": {
         "allow-plugins": {
