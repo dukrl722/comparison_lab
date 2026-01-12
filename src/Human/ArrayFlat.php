@@ -2,15 +2,15 @@
 
 declare(strict_types = 1);
 
-namespace Src;
+namespace Src\Human;
 
 class ArrayFlat
 {
-    protected array $data;
+    public array $data;
 
     public function __construct()
     {
-        $json = file_get_contents(__DIR__ . '/../data/ArrayFlatData.json');
+        $json       = file_get_contents(__DIR__ . '/../../data/ArrayFlatData.json');
         $this->data = json_decode($json, true);
     }
 
@@ -21,12 +21,13 @@ class ArrayFlat
         }
 
         $items = [];
+
         foreach ($this->data as $item) {
             if (!array_key_exists('id', $item) || is_null($item['id'])) {
                 throw new \RuntimeException('Each item must have a unique "id" key.');
             }
 
-            $item['children'] = [];
+            $item['children']   = [];
             $items[$item['id']] = $item;
         }
 

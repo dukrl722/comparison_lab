@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "name": "Electronics",
+        "parent_id": null
+    },
+    {
+        "id": 2,
+        "name": "Computers",
+        "parent_id": 1
+    },
+    {
+        "id": 3,
+        "name": "Smartphones",
+        "parent_id": 1
+    },
+    {
+        "id": 4,
+        "name": "Laptops",
+        "parent_id": 2
+    }
+]
