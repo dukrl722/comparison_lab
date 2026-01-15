@@ -2,9 +2,8 @@
 
 declare(strict_types = 1);
 
-use Src\Human\ArrayFlat;
-
 require __DIR__ . '/vendor/autoload.php';
+
 function benchmark(callable $method, string $name, int $repeat = 100): void
 {
     $initialMemory = memory_get_peak_usage();
@@ -27,7 +26,3 @@ function benchmark(callable $method, string $name, int $repeat = 100): void
     echo 'Average Time: ' . number_format($averageMillisecondsTime, 4) . "ms\n";
     echo 'Memory Peak: ' . number_format($usedMemory, 4) . "KB\n";
 }
-
-$arrayFlat = new ArrayFlat();
-
-benchmark(fn () => $arrayFlat->group(), 'Array Flattening Benchmark', 10);
