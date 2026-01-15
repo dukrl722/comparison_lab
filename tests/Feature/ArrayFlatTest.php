@@ -2,6 +2,7 @@
 
 declare(strict_types = 1);
 
+use Src\Cursor\ArrayFlatLLM as CursorArrayFlat;
 use Src\Human\ArrayFlat as HumanArrayFlat;
 
 it('should group flat array into hierarchical structure', function (string $className): void {
@@ -13,8 +14,6 @@ it('should group flat array into hierarchical structure', function (string $clas
     $class->data = $dataset;
 
     $grouped = $class->group();
-
-    var_dump($grouped[0]['children']);
 
     // father
     expect($grouped)->toBeArray()
@@ -32,6 +31,7 @@ it('should group flat array into hierarchical structure', function (string $clas
         ->and($grouped[0]['children'][1]['children'])->toBe([]);
 })->with([
     HumanArrayFlat::class,
+    CursorArrayFlat::class,
 ]);
 
 it('should return an empty array when data is empty', function (string $className): void {
@@ -44,6 +44,7 @@ it('should return an empty array when data is empty', function (string $classNam
     expect($grouped)->toBeArray()->toBe([]);
 })->with([
     HumanArrayFlat::class,
+    CursorArrayFlat::class,
 ]);
 
 it('should return an exception when dataset is incorrect', function (string $className): void {
@@ -59,4 +60,5 @@ it('should return an exception when dataset is incorrect', function (string $cla
     ->throws(RuntimeException::class, 'Each item must have a unique "id" key.')
     ->with([
         HumanArrayFlat::class,
+        CursorArrayFlat::class,
     ]);
