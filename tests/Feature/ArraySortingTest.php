@@ -2,6 +2,7 @@
 
 declare(strict_types = 1);
 
+use Src\Cursor\ArraySortingLLM as CursorArraySorting;
 use Src\Human\ArraySorting as HumanArraySorting;
 
 beforeEach(function (): void {
@@ -24,6 +25,7 @@ it('should sort by name asc correctly', function (string $className): void {
         ->and($arraySorting[4]['name'])->toBe('Smartphones');
 })->with([
     HumanArraySorting::class,
+    CursorArraySorting::class,
 ]);
 
 it('should sort by name desc correctly', function (string $className): void {
@@ -41,6 +43,7 @@ it('should sort by name desc correctly', function (string $className): void {
         ->and($arraySorting[4]['name'])->toBe('Computers');
 })->with([
     HumanArraySorting::class,
+    CursorArraySorting::class,
 ]);
 
 it('should sort by id asc correctly', function (string $className): void {
@@ -58,10 +61,11 @@ it('should sort by id asc correctly', function (string $className): void {
         ->and($arraySorting[4]['id'])->toBe(5);
 })->with([
     HumanArraySorting::class,
+    CursorArraySorting::class,
 ]);
 
-it('should sort by id desc correctly', function (): void {
-    $class = new HumanArraySorting();
+it('should sort by id desc correctly', function (string $className): void {
+    $class = new $className();
 
     $class->data = $this->dataset;
 
@@ -75,6 +79,7 @@ it('should sort by id desc correctly', function (): void {
         ->and($arraySorting[4]['id'])->toBe(1);
 })->with([
     HumanArraySorting::class,
+    CursorArraySorting::class,
 ]);
 
 it('should sort by id if column does not exists', function (string $className): void {
@@ -92,4 +97,5 @@ it('should sort by id if column does not exists', function (string $className): 
         ->and($arraySorting[4]['id'])->toBe(5);
 })->with([
     HumanArraySorting::class,
+    CursorArraySorting::class,
 ]);
