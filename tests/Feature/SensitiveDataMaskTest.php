@@ -2,6 +2,7 @@
 
 declare(strict_types = 1);
 
+use Src\Cursor\SensitiveDataMaskLLM as CursorSensitiveDataMask;
 use Src\Human\SensitiveDataMask;
 
 it('should create a masked version of sensitive email data', function (string $className): void {
@@ -16,6 +17,7 @@ it('should create a masked version of sensitive email data', function (string $c
     expect($maskedData)->toBe('*a***@email.com');
 })->with([
     SensitiveDataMask::class,
+    CursorSensitiveDataMask::class,
 ]);
 
 it('should return an exception when email has an invalid format', function (string $className, string $invalidMailFormat): void {
@@ -28,4 +30,7 @@ it('should return an exception when email has an invalid format', function (stri
         [SensitiveDataMask::class, 'test_mail.com'],
         [SensitiveDataMask::class, 'test@'],
         [SensitiveDataMask::class, 'test@com'],
+        [CursorSensitiveDataMask::class, 'test_mail.com'],
+        [CursorSensitiveDataMask::class, 'test@'],
+        [CursorSensitiveDataMask::class, 'test@com'],
     ]);
