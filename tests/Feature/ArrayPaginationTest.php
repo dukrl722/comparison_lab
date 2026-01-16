@@ -2,6 +2,7 @@
 
 declare(strict_types = 1);
 
+use Src\Cursor\ArrayPaginationLLM as CursorArrayPagination;
 use Src\Human\ArrayPagination as HumanArrayPagination;
 
 beforeEach(function (): void {
@@ -34,6 +35,7 @@ it('should paginate array correctly', function (string $className): void {
         ->and($arrayPaginated['pagination']['has_next_page'])->toBeTrue();
 })->with([
     HumanArrayPagination::class,
+    CursorArrayPagination::class,
 ]);
 
 it('should paginate array when no params are passed', function (string $className): void {
@@ -59,6 +61,7 @@ it('should paginate array when no params are passed', function (string $classNam
         ->and($arrayPaginated['pagination']['has_next_page'])->toBeFalse();
 })->with([
     HumanArrayPagination::class,
+    CursorArrayPagination::class,
 ]);
 
 it('should paginate using absolute values when paginate params are negative numbers', function (string $className): void {
@@ -89,4 +92,5 @@ it('should paginate using absolute values when paginate params are negative numb
         ->and($arrayPaginated['pagination']['has_next_page'])->toBeTrue();
 })->with([
     HumanArrayPagination::class,
+    CursorArrayPagination::class,
 ]);
