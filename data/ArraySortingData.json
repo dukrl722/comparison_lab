@@ -1,0 +1,22 @@
+[
+    { "id": 1, "name": "Electronics" },
+    { "id": 2, "name": "Computers" },
+    { "id": 3, "name": "Smartphones" },
+    { "id": 4, "name": "Laptops" },
+    { "id": 5, "name": "Desktops" },
+    { "id": 6, "name": "Components" },
+    { "id": 7, "name": "Gaming Laptops" },
+    { "id": 8, "name": "Ultrabooks" },
+    { "id": 9, "name": "Processors" },
+    { "id": 10, "name": "Graphics Cards" },
+    { "id": 11, "name": "Motherboards" },
+    { "id": 12, "name": "Apple" },
+    { "id": 13, "name": "Samsung" },
+    { "id": 14, "name": "Google" },
+    { "id": 15, "name": "Accessories" },
+    { "id": 16, "name": "Headphones" },
+    { "id": 17, "name": "Chargers" },
+    { "id": 18, "name": "Cables" },
+    { "id": 19, "name": "Clothing" },
+    { "id": 20, "name": "Men" }
+]
