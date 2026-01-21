@@ -6,7 +6,7 @@ namespace Src\Claude;
 
 use RuntimeException;
 
-class ClaudeArrayFlat
+class ArrayFlat
 {
     public array $data = [];
 

@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-use Src\Claude\ClaudeArrayFlat;
+use Src\Claude\ArrayFlat as ClaudeArrayFlat;
 use Src\Cursor\ArrayFlatLLM as CursorArrayFlat;
 use Src\Human\ArrayFlat as HumanArrayFlat;
 
