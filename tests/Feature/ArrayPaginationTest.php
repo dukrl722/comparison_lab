@@ -2,6 +2,7 @@
 
 declare(strict_types = 1);
 
+use Src\Claude\ArrayPagination as ClaudeArrayPagination;
 use Src\Cursor\ArrayPaginationLLM as CursorArrayPagination;
 use Src\Human\ArrayPagination as HumanArrayPagination;
 
@@ -36,6 +37,7 @@ it('should paginate array correctly', function (string $className): void {
 })->with([
     HumanArrayPagination::class,
     CursorArrayPagination::class,
+    ClaudeArrayPagination::class,
 ]);
 
 it('should paginate array when no params are passed', function (string $className): void {
@@ -62,6 +64,7 @@ it('should paginate array when no params are passed', function (string $classNam
 })->with([
     HumanArrayPagination::class,
     CursorArrayPagination::class,
+    ClaudeArrayPagination::class,
 ]);
 
 it('should paginate using absolute values when paginate params are negative numbers', function (string $className): void {
@@ -93,4 +96,5 @@ it('should paginate using absolute values when paginate params are negative numb
 })->with([
     HumanArrayPagination::class,
     CursorArrayPagination::class,
+    ClaudeArrayPagination::class,
 ]);
