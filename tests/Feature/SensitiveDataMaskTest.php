@@ -2,6 +2,7 @@
 
 declare(strict_types = 1);
 
+use Src\ChatGPT\SensitiveDataMask as ChatGPTSensitiveDataMask;
 use Src\Claude\SensitiveDataMask as ClaudeSensitiveDataMask;
 use Src\Copilot\SensitiveDataMask as CopilotSensitiveDataMask;
 use Src\Cursor\SensitiveDataMaskLLM as CursorSensitiveDataMask;
@@ -23,6 +24,7 @@ it('should create a masked version of sensitive email data', function (string $c
     CursorSensitiveDataMask::class,
     ClaudeSensitiveDataMask::class,
     CopilotSensitiveDataMask::class,
+    ChatGPTSensitiveDataMask::class,
     GeminiSensitiveDataMask::class,
 ]);
 
@@ -45,6 +47,9 @@ it('should return an exception when email has an invalid format', function (stri
         [CopilotSensitiveDataMask::class, 'test_mail.com'],
         [CopilotSensitiveDataMask::class, 'test@'],
         [CopilotSensitiveDataMask::class, 'test@com'],
+        [ChatGPTSensitiveDataMask::class, 'test_mail.com'],
+        [ChatGPTSensitiveDataMask::class, 'test@'],
+        [ChatGPTSensitiveDataMask::class, 'test@com'],
         [GeminiSensitiveDataMask::class, 'test_mail.com'],
         [GeminiSensitiveDataMask::class, 'test@'],
         [GeminiSensitiveDataMask::class, 'test@com'],
