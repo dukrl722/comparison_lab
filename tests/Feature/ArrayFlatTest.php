@@ -3,6 +3,7 @@
 declare(strict_types = 1);
 
 use Src\Claude\ArrayFlat as ClaudeArrayFlat;
+use Src\Copilot\ArrayFlat as CopilotArrayFlat;
 use Src\Cursor\ArrayFlatLLM as CursorArrayFlat;
 use Src\Human\ArrayFlat as HumanArrayFlat;
 
@@ -34,6 +35,7 @@ it('should group flat array into hierarchical structure', function (string $clas
     HumanArrayFlat::class,
     CursorArrayFlat::class,
     ClaudeArrayFlat::class,
+    CopilotArrayFlat::class,
 ]);
 
 it('should return an empty array when data is empty', function (string $className): void {
@@ -48,6 +50,7 @@ it('should return an empty array when data is empty', function (string $classNam
     HumanArrayFlat::class,
     CursorArrayFlat::class,
     ClaudeArrayFlat::class,
+    CopilotArrayFlat::class,
 ]);
 
 it('should return an exception when dataset is incorrect', function (string $className): void {
@@ -65,4 +68,5 @@ it('should return an exception when dataset is incorrect', function (string $cla
         HumanArrayFlat::class,
         CursorArrayFlat::class,
         ClaudeArrayFlat::class,
+        CopilotArrayFlat::class,
     ]);
