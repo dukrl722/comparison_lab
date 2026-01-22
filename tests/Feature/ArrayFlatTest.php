@@ -2,6 +2,7 @@
 
 declare(strict_types = 1);
 
+use Src\ChatGPT\ArrayFlat as ChatGPTArrayFlat;
 use Src\Claude\ArrayFlat as ClaudeArrayFlat;
 use Src\Copilot\ArrayFlat as CopilotArrayFlat;
 use Src\Cursor\ArrayFlatLLM as CursorArrayFlat;
@@ -37,6 +38,7 @@ it('should group flat array into hierarchical structure', function (string $clas
     CursorArrayFlat::class,
     ClaudeArrayFlat::class,
     CopilotArrayFlat::class,
+    ChatGPTArrayFlat::class,
     GeminiArrayFlat::class,
 ]);
 
@@ -53,6 +55,7 @@ it('should return an empty array when data is empty', function (string $classNam
     CursorArrayFlat::class,
     ClaudeArrayFlat::class,
     CopilotArrayFlat::class,
+    ChatGPTArrayFlat::class,
     GeminiArrayFlat::class,
 ]);
 
@@ -72,5 +75,6 @@ it('should return an exception when dataset is incorrect', function (string $cla
         CursorArrayFlat::class,
         ClaudeArrayFlat::class,
         CopilotArrayFlat::class,
+        ChatGPTArrayFlat::class,
         GeminiArrayFlat::class,
     ]);
