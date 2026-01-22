@@ -3,6 +3,7 @@
 declare(strict_types = 1);
 
 use Src\Claude\SensitiveDataMask as ClaudeSensitiveDataMask;
+use Src\Copilot\SensitiveDataMask as CopilotSensitiveDataMask;
 use Src\Cursor\SensitiveDataMaskLLM as CursorSensitiveDataMask;
 use Src\Human\SensitiveDataMask as HumanSensitiveDataMask;
 
@@ -20,6 +21,7 @@ it('should create a masked version of sensitive email data', function (string $c
     HumanSensitiveDataMask::class,
     CursorSensitiveDataMask::class,
     ClaudeSensitiveDataMask::class,
+    CopilotSensitiveDataMask::class,
 ]);
 
 it('should return an exception when email has an invalid format', function (string $className, string $invalidMailFormat): void {
@@ -38,4 +40,7 @@ it('should return an exception when email has an invalid format', function (stri
         [ClaudeSensitiveDataMask::class, 'test_mail.com'],
         [ClaudeSensitiveDataMask::class, 'test@'],
         [ClaudeSensitiveDataMask::class, 'test@com'],
+        [CopilotSensitiveDataMask::class, 'test_mail.com'],
+        [CopilotSensitiveDataMask::class, 'test@'],
+        [CopilotSensitiveDataMask::class, 'test@com'],
     ]);
