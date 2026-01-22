@@ -5,6 +5,7 @@ declare(strict_types = 1);
 use Src\Claude\ArrayPagination as ClaudeArrayPagination;
 use Src\Copilot\ArrayPagination as CopilotArrayPagination;
 use Src\Cursor\ArrayPaginationLLM as CursorArrayPagination;
+use Src\Gemini\ArrayPagination as GeminiArrayPagination;
 use Src\Human\ArrayPagination as HumanArrayPagination;
 
 beforeEach(function (): void {
@@ -40,6 +41,7 @@ it('should paginate array correctly', function (string $className): void {
     CursorArrayPagination::class,
     ClaudeArrayPagination::class,
     CopilotArrayPagination::class,
+    GeminiArrayPagination::class,
 ]);
 
 it('should paginate array when no params are passed', function (string $className): void {
@@ -68,6 +70,7 @@ it('should paginate array when no params are passed', function (string $classNam
     CursorArrayPagination::class,
     ClaudeArrayPagination::class,
     CopilotArrayPagination::class,
+    GeminiArrayPagination::class,
 ]);
 
 it('should paginate using absolute values when paginate params are negative numbers', function (string $className): void {
@@ -101,4 +104,5 @@ it('should paginate using absolute values when paginate params are negative numb
     CursorArrayPagination::class,
     ClaudeArrayPagination::class,
     CopilotArrayPagination::class,
+    GeminiArrayPagination::class,
 ]);
