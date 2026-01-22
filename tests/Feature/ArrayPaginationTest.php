@@ -2,6 +2,7 @@
 
 declare(strict_types = 1);
 
+use Src\ChatGPT\ArrayPagination as ChatGPTArrayPagination;
 use Src\Claude\ArrayPagination as ClaudeArrayPagination;
 use Src\Copilot\ArrayPagination as CopilotArrayPagination;
 use Src\Cursor\ArrayPaginationLLM as CursorArrayPagination;
@@ -41,6 +42,7 @@ it('should paginate array correctly', function (string $className): void {
     CursorArrayPagination::class,
     ClaudeArrayPagination::class,
     CopilotArrayPagination::class,
+    ChatGPTArrayPagination::class,
     GeminiArrayPagination::class,
 ]);
 
@@ -70,6 +72,7 @@ it('should paginate array when no params are passed', function (string $classNam
     CursorArrayPagination::class,
     ClaudeArrayPagination::class,
     CopilotArrayPagination::class,
+    ChatGPTArrayPagination::class,
     GeminiArrayPagination::class,
 ]);
 
@@ -104,5 +107,6 @@ it('should paginate using absolute values when paginate params are negative numb
     CursorArrayPagination::class,
     ClaudeArrayPagination::class,
     CopilotArrayPagination::class,
+    ChatGPTArrayPagination::class,
     GeminiArrayPagination::class,
 ]);
